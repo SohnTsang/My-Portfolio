@@ -1,0 +1,9 @@
+Please create a favicon.ico file with your personal branding, such as your initials "KT" 
+in the teal (#008080) and navy (#1f2d47) color scheme. 
+
+You can use online favicon generators like:
+- favicon.io
+- realfavicongenerator.net
+- faviconer.com
+
+Once created, replace this text file with your favicon.ico file. 

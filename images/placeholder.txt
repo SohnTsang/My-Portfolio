@@ -1,0 +1,11 @@
+Please add your images to this directory with the following names:
+
+1. headshot.jpg - Your profile picture (ideally a square image that will be displayed as a circle)
+2. project-1.png - Full-size image for the Docora project
+3. project-1-thumb.png - Thumbnail image for the Docora project
+4. project-2.png - Full-size image for the FitPulse project
+5. project-2-thumb.png - Thumbnail image for the FitPulse project
+6. project-3.png - Full-size image for the Tokyo Real Estate Predictor project
+7. project-3-thumb.png - Thumbnail image for the Tokyo Real Estate Predictor project
+
+For placeholder/development purposes, you can use free stock images or generate images with AI tools. 

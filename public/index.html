@@ -13,7 +13,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Noto+Sans+HK:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 
@@ -36,12 +36,17 @@
         <div class="header-inner">
             <a href="#hero" class="header-wordmark">KAHO TSANG</a>
             <nav class="header-nav" role="navigation" aria-label="Main navigation">
-                <a href="#services" class="header-nav-link">Services</a>
-                <a href="#work" class="header-nav-link">Work</a>
-                <a href="#experience" class="header-nav-link">Experience</a>
-                <a href="#contact" class="header-nav-link">Contact</a>
+                <a href="#services" class="header-nav-link" data-i18n="nav.services">Services</a>
+                <a href="#work" class="header-nav-link" data-i18n="nav.work">Work</a>
+                <a href="#experience" class="header-nav-link" data-i18n="nav.experience">Experience</a>
+                <a href="#contact" class="header-nav-link" data-i18n="nav.contact">Contact</a>
             </nav>
-            <a href="#contact" class="header-cta">Get in Touch</a>
+            <div class="header-actions">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+                    <span class="lang-toggle-label" id="lang-label">中文</span>
+                </button>
+                <a href="#contact" class="header-cta" data-i18n="nav.cta">Get in Touch</a>
+            </div>
             <button class="header-menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">
                 <span class="menu-icon">
                     <span></span>
@@ -54,11 +59,16 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
         <div class="mobile-menu-inner">
-            <a href="#services" class="mobile-menu-link">Services</a>
-            <a href="#work" class="mobile-menu-link">Work</a>
-            <a href="#experience" class="mobile-menu-link">Experience</a>
-            <a href="#contact" class="mobile-menu-link">Contact</a>
-            <a href="#contact" class="mobile-menu-cta">Get in Touch</a>
+            <a href="#services" class="mobile-menu-link" data-i18n="nav.services">Services</a>
+            <a href="#work" class="mobile-menu-link" data-i18n="nav.work">Work</a>
+            <a href="#experience" class="mobile-menu-link" data-i18n="nav.experience">Experience</a>
+            <a href="#contact" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
+            <div class="mobile-menu-bottom">
+                <button class="lang-toggle lang-toggle--mobile" id="lang-toggle-mobile" aria-label="Switch language">
+                    <span class="lang-toggle-label" id="lang-label-mobile">中文</span>
+                </button>
+                <a href="#contact" class="mobile-menu-cta" data-i18n="nav.cta">Get in Touch</a>
+            </div>
         </div>
     </div>
 
@@ -67,14 +77,14 @@
         <!-- Hero -->
         <section class="hero" id="hero">
             <div class="container">
-                <h1 class="hero-headline reveal">Web, App &amp; Automation Consultant</h1>
+                <h1 class="hero-headline reveal" data-i18n="hero.headline">Web, App &amp; Automation Consultant</h1>
                 <div class="hero-grid">
                     <div class="hero-text">
-                        <p class="hero-subheadline reveal">I help businesses build better digital products and improve the way they work.</p>
-                        <p class="hero-body reveal">From websites and app prototypes to workflow automation and process improvement, I build practical solutions that are clear, useful, and shaped around real business needs.</p>
+                        <p class="hero-subheadline reveal" data-i18n="hero.subheadline">I help businesses build better digital products and improve the way they work.</p>
+                        <p class="hero-body reveal" data-i18n="hero.body">From websites and app prototypes to workflow automation and process improvement, I build practical solutions that are clear, useful, and shaped around real business needs.</p>
                         <div class="hero-buttons reveal">
-                            <a href="#work" class="btn btn-primary">View Work</a>
-                            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                            <a href="#work" class="btn btn-primary" data-i18n="hero.btn_work">View Work</a>
+                            <a href="#contact" class="btn btn-secondary" data-i18n="nav.cta">Get in Touch</a>
                         </div>
                     </div>
                     <div class="hero-portrait reveal">
@@ -84,10 +94,10 @@
                     </div>
                 </div>
                 <div class="hero-meta reveal">
-                    <p class="hero-trust">Experience across Barclays, Bank of America, Goldman Sachs, and independent product work.</p>
+                    <p class="hero-trust" data-i18n="hero.trust">Experience across Barclays, Bank of America, Goldman Sachs, and independent product work.</p>
                     <p class="hero-availability">
                         <span class="availability-dot"></span>
-                        Available for remote freelance projects in Hong Kong.
+                        <span data-i18n="hero.availability">Available for remote freelance projects in Hong Kong.</span>
                     </p>
                 </div>
             </div>
@@ -96,8 +106,8 @@
         <!-- What I Do -->
         <section class="section" id="what-i-do">
             <div class="container container--narrow">
-                <h2 class="section-title reveal">What I Do</h2>
-                <div class="what-content reveal">
+                <h2 class="section-title reveal" data-i18n="whatido.title">What I Do</h2>
+                <div class="what-content reveal" data-i18n-html="whatido.content">
                     <p class="text-lead">I work with businesses that need more than just design or code.</p>
                     <p>Some need a website that presents them properly. Some need a tool that saves time and reduces manual work. Some need help turning a messy process into something clearer and easier to manage.</p>
                     <p>My background combines business operations, workflow improvement, and hands-on product building. I bring both the thinking and the execution.</p>
@@ -109,29 +119,29 @@
         <section class="section section--alt" id="services">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2 class="section-title">Services</h2>
-                    <p class="section-intro">I take on freelance projects across digital product work, automation, and business process improvement.</p>
+                    <h2 class="section-title" data-i18n="services.title">Services</h2>
+                    <p class="section-intro" data-i18n="services.intro">I take on freelance projects across digital product work, automation, and business process improvement.</p>
                 </div>
                 <div class="services-grid">
                     <article class="service-card reveal">
                         <span class="service-number">01</span>
-                        <h3 class="service-title">Web Design &amp; Development</h3>
-                        <p class="service-text">Business websites, landing pages, and frontend builds designed to look professional, communicate clearly, and support real business goals.</p>
+                        <h3 class="service-title" data-i18n="services.s1.title">Web Design &amp; Development</h3>
+                        <p class="service-text" data-i18n="services.s1.text">Business websites, landing pages, and frontend builds designed to look professional, communicate clearly, and support real business goals.</p>
                     </article>
                     <article class="service-card reveal">
                         <span class="service-number">02</span>
-                        <h3 class="service-title">App Prototypes &amp; Product Builds</h3>
-                        <p class="service-text">iOS and web product builds for early-stage ideas, internal tools, or customer-facing products that need a strong structure and a clear user experience.</p>
+                        <h3 class="service-title" data-i18n="services.s2.title">App Prototypes &amp; Product Builds</h3>
+                        <p class="service-text" data-i18n="services.s2.text">iOS and web product builds for early-stage ideas, internal tools, or customer-facing products that need a strong structure and a clear user experience.</p>
                     </article>
                     <article class="service-card reveal">
                         <span class="service-number">03</span>
-                        <h3 class="service-title">Workflow Automation</h3>
-                        <p class="service-text">Excel, VBA, and Python-based tools that reduce manual work, improve accuracy, and help teams operate more efficiently.</p>
+                        <h3 class="service-title" data-i18n="services.s3.title">Workflow Automation</h3>
+                        <p class="service-text" data-i18n="services.s3.text">Excel, VBA, and Python-based tools that reduce manual work, improve accuracy, and help teams operate more efficiently.</p>
                     </article>
                     <article class="service-card reveal">
                         <span class="service-number">04</span>
-                        <h3 class="service-title">Process Improvement &amp; Internal Tools</h3>
-                        <p class="service-text">Reviewing business workflows, identifying friction points, and building practical systems or tools that support smoother day-to-day operations.</p>
+                        <h3 class="service-title" data-i18n="services.s4.title">Process Improvement &amp; Internal Tools</h3>
+                        <p class="service-text" data-i18n="services.s4.text">Reviewing business workflows, identifying friction points, and building practical systems or tools that support smoother day-to-day operations.</p>
                     </article>
                 </div>
             </div>
@@ -141,26 +151,26 @@
         <section class="section" id="work">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2 class="section-title">Selected Work</h2>
-                    <p class="section-intro">A selection of work across automation, internal tools, product development, and digital builds.</p>
+                    <h2 class="section-title" data-i18n="work.title">Selected Work</h2>
+                    <p class="section-intro" data-i18n="work.intro">A selection of work across automation, internal tools, product development, and digital builds.</p>
                 </div>
                 <div class="work-grid">
                     <article class="work-card reveal" data-project="auction-booking">
                         <div class="work-visual work-visual--abstract work-visual--1">
                             <div class="work-visual-inner">
-                                <span class="work-visual-label">Rates Workflow</span>
+                                <span class="work-visual-label" data-i18n="work.w1.visual">Rates Workflow</span>
                             </div>
                         </div>
                         <div class="work-info">
-                            <span class="work-category">Automation / Internal Tool</span>
-                            <h3 class="work-title">Auction Booking Tool for Rates Workflow</h3>
-                            <p class="work-desc">Rebuilt an Excel/VBA booking tool used in a rates workflow to improve input flow, reduce manual errors, and create clearer audit records during time-sensitive activity.</p>
+                            <span class="work-category" data-i18n="work.w1.category">Automation / Internal Tool</span>
+                            <h3 class="work-title" data-i18n="work.w1.title">Auction Booking Tool for Rates Workflow</h3>
+                            <p class="work-desc" data-i18n="work.w1.desc">Rebuilt an Excel/VBA booking tool used in a rates workflow to improve input flow, reduce manual errors, and create clearer audit records during time-sensitive activity.</p>
                             <div class="work-meta">
                                 <div class="work-stack">
                                     <span>Excel</span>
                                     <span>VBA</span>
                                 </div>
-                                <p class="work-focus">Focus: Speed, accuracy, audit readiness</p>
+                                <p class="work-focus" data-i18n="work.w1.focus">Focus: Speed, accuracy, audit readiness</p>
                             </div>
                         </div>
                     </article>
@@ -168,20 +178,20 @@
                     <article class="work-card reveal" data-project="settlement-automation">
                         <div class="work-visual work-visual--abstract work-visual--2">
                             <div class="work-visual-inner">
-                                <span class="work-visual-label">Settlement Flow</span>
+                                <span class="work-visual-label" data-i18n="work.w2.visual">Settlement Flow</span>
                             </div>
                         </div>
                         <div class="work-info">
-                            <span class="work-category">Process Improvement / Automation</span>
-                            <h3 class="work-title">Settlement Workflow Automation</h3>
-                            <p class="work-desc">Built VBA-based workflow automation for settlement support, covering unmatched trade alerts, pair-off handling, and SSI distribution for a large client base.</p>
+                            <span class="work-category" data-i18n="work.w2.category">Process Improvement / Automation</span>
+                            <h3 class="work-title" data-i18n="work.w2.title">Settlement Workflow Automation</h3>
+                            <p class="work-desc" data-i18n="work.w2.desc">Built VBA-based workflow automation for settlement support, covering unmatched trade alerts, pair-off handling, and SSI distribution for a large client base.</p>
                             <div class="work-meta">
                                 <div class="work-stack">
                                     <span>Excel</span>
                                     <span>VBA</span>
                                     <span>Workflow Design</span>
                                 </div>
-                                <p class="work-focus">Focus: Reduced repetitive manual work, improved consistency</p>
+                                <p class="work-focus" data-i18n="work.w2.focus">Focus: Reduced repetitive manual work, improved consistency</p>
                             </div>
                         </div>
                     </article>
@@ -191,16 +201,16 @@
                             <img src="images/Tokyo AI.png" alt="Residential Property Pricing Model" loading="lazy">
                         </div>
                         <div class="work-info">
-                            <span class="work-category">Data Product / Business Tool</span>
-                            <h3 class="work-title">Residential Property Pricing Model</h3>
-                            <p class="work-desc">Built a Python-based property pricing model covering Tokyo's 23 wards, including data collection, feature engineering, training logic, and ongoing model maintenance.</p>
+                            <span class="work-category" data-i18n="work.w3.category">Data Product / Business Tool</span>
+                            <h3 class="work-title" data-i18n="work.w3.title">Residential Property Pricing Model</h3>
+                            <p class="work-desc" data-i18n="work.w3.desc">Built a Python-based property pricing model covering Tokyo's 23 wards, including data collection, feature engineering, training logic, and ongoing model maintenance.</p>
                             <div class="work-meta">
                                 <div class="work-stack">
                                     <span>Python</span>
                                     <span>Data Pipeline</span>
                                     <span>Model Logic</span>
                                 </div>
-                                <p class="work-focus">Focus: Practical decision support in real estate workflows</p>
+                                <p class="work-focus" data-i18n="work.w3.focus">Focus: Practical decision support in real estate workflows</p>
                             </div>
                         </div>
                     </article>
@@ -210,9 +220,9 @@
                             <img src="images/MeshiSele.png" alt="Websites, Landing Pages and Product Builds" loading="lazy">
                         </div>
                         <div class="work-info">
-                            <span class="work-category">Web Design / Product Development</span>
-                            <h3 class="work-title">Websites, Landing Pages &amp; Product Builds</h3>
-                            <p class="work-desc">Built and shipped independent digital products including business landing pages, an iOS fitness app, and a safety check-in app, from planning through structure, build, and testing.</p>
+                            <span class="work-category" data-i18n="work.w4.category">Web Design / Product Development</span>
+                            <h3 class="work-title" data-i18n="work.w4.title">Websites, Landing Pages &amp; Product Builds</h3>
+                            <p class="work-desc" data-i18n="work.w4.desc">Built and shipped independent digital products including business landing pages, an iOS fitness app, and a safety check-in app, from planning through structure, build, and testing.</p>
                             <div class="work-meta">
                                 <div class="work-stack">
                                     <span>React</span>
@@ -220,7 +230,7 @@
                                     <span>Swift</span>
                                     <span>Frontend Systems</span>
                                 </div>
-                                <p class="work-focus">Focus: Product thinking, UI quality, practical execution</p>
+                                <p class="work-focus" data-i18n="work.w4.focus">Focus: Product thinking, UI quality, practical execution</p>
                             </div>
                         </div>
                     </article>
@@ -232,12 +242,12 @@
         <section class="section section--alt" id="capabilities">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2 class="section-title">Technical Capabilities</h2>
-                    <p class="section-intro">A practical toolkit across frontend, product builds, automation, and business-facing systems.</p>
+                    <h2 class="section-title" data-i18n="capabilities.title">Technical Capabilities</h2>
+                    <p class="section-intro" data-i18n="capabilities.intro">A practical toolkit across frontend, product builds, automation, and business-facing systems.</p>
                 </div>
                 <div class="capabilities-grid reveal">
                     <div class="capability-group">
-                        <h3 class="capability-label">Frontend</h3>
+                        <h3 class="capability-label" data-i18n="capabilities.frontend">Frontend</h3>
                         <div class="capability-items">
                             <span>HTML</span>
                             <span>CSS</span>
@@ -249,14 +259,14 @@
                         </div>
                     </div>
                     <div class="capability-group">
-                        <h3 class="capability-label">App Development</h3>
+                        <h3 class="capability-label" data-i18n="capabilities.app">App Development</h3>
                         <div class="capability-items">
                             <span>Swift</span>
                             <span>iOS Prototyping</span>
                         </div>
                     </div>
                     <div class="capability-group">
-                        <h3 class="capability-label">Automation &amp; Data</h3>
+                        <h3 class="capability-label" data-i18n="capabilities.automation">Automation &amp; Data</h3>
                         <div class="capability-items">
                             <span>Python</span>
                             <span>Excel</span>
@@ -265,7 +275,7 @@
                         </div>
                     </div>
                     <div class="capability-group">
-                        <h3 class="capability-label">Backend / Systems</h3>
+                        <h3 class="capability-label" data-i18n="capabilities.backend">Backend / Systems</h3>
                         <div class="capability-items">
                             <span>Supabase</span>
                             <span>Firebase</span>
@@ -274,12 +284,12 @@
                         </div>
                     </div>
                     <div class="capability-group">
-                        <h3 class="capability-label">Product Delivery</h3>
+                        <h3 class="capability-label" data-i18n="capabilities.delivery">Product Delivery</h3>
                         <div class="capability-items">
-                            <span>Testing</span>
-                            <span>Workflow Design</span>
-                            <span>Internal Tools</span>
-                            <span>Stakeholder Coordination</span>
+                            <span data-i18n="capabilities.d1">Testing</span>
+                            <span data-i18n="capabilities.d2">Workflow Design</span>
+                            <span data-i18n="capabilities.d3">Internal Tools</span>
+                            <span data-i18n="capabilities.d4">Stakeholder Coordination</span>
                         </div>
                     </div>
                 </div>
@@ -289,25 +299,25 @@
         <!-- Why Clients Work With Me -->
         <section class="section" id="why">
             <div class="container">
-                <h2 class="section-title reveal">Why Clients Work With Me</h2>
+                <h2 class="section-title reveal" data-i18n="why.title">Why Clients Work With Me</h2>
                 <div class="why-content">
-                    <div class="why-lead reveal">
+                    <div class="why-lead reveal" data-i18n-html="why.lead">
                         <p>I am not just someone who builds screens or writes code.</p>
                         <p>My background includes live business environments where accuracy, timing, and process matter. I have worked across front office, middle office, operations, and technology-facing roles, while also building products independently.</p>
                         <p>That means I can look at a business problem, understand the workflow behind it, and build something that is practical to use.</p>
                     </div>
                     <div class="why-blocks">
                         <div class="why-block reveal">
-                            <h3>Business understanding</h3>
-                            <p>Experience in fast-moving operational environments where details matter.</p>
+                            <h3 data-i18n="why.b1.title">Business understanding</h3>
+                            <p data-i18n="why.b1.text">Experience in fast-moving operational environments where details matter.</p>
                         </div>
                         <div class="why-block reveal">
-                            <h3>Hands-on delivery</h3>
-                            <p>Comfortable moving from idea to build, testing, refinement, and launch.</p>
+                            <h3 data-i18n="why.b2.title">Hands-on delivery</h3>
+                            <p data-i18n="why.b2.text">Comfortable moving from idea to build, testing, refinement, and launch.</p>
                         </div>
                         <div class="why-block reveal">
-                            <h3>Clear communication</h3>
-                            <p>Able to work across English, Japanese, Cantonese, and Mandarin.</p>
+                            <h3 data-i18n="why.b3.title">Clear communication</h3>
+                            <p data-i18n="why.b3.text">Able to work across English, Japanese, Cantonese, and Mandarin.</p>
                         </div>
                     </div>
                 </div>
@@ -318,29 +328,29 @@
         <section class="section section--alt" id="experience">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2 class="section-title">Experience</h2>
-                    <p class="section-intro">Experience across finance, operations, automation, and product work.</p>
+                    <h2 class="section-title" data-i18n="experience.title">Experience</h2>
+                    <p class="section-intro" data-i18n="experience.intro">Experience across finance, operations, automation, and product work.</p>
                 </div>
                 <div class="experience-grid">
                     <article class="experience-card reveal">
                         <h3 class="experience-company">Barclays</h3>
-                        <p class="experience-role">Trader &amp; Sales Assistant, Rates</p>
-                        <p class="experience-desc">Support trade workflow operations, booking, confirmations, issue resolution, and testing across front-office and support functions.</p>
+                        <p class="experience-role" data-i18n="experience.e1.role">Trader &amp; Sales Assistant, Rates</p>
+                        <p class="experience-desc" data-i18n="experience.e1.desc">Support trade workflow operations, booking, confirmations, issue resolution, and testing across front-office and support functions.</p>
                     </article>
                     <article class="experience-card reveal">
                         <h3 class="experience-company">Bank of America Merrill Lynch</h3>
-                        <p class="experience-role">Fixed Income Trade Processing, Senior Analyst</p>
-                        <p class="experience-desc">Worked across daily trade support, settlement coordination, automation, and process improvement for fixed income products.</p>
+                        <p class="experience-role" data-i18n="experience.e2.role">Fixed Income Trade Processing, Senior Analyst</p>
+                        <p class="experience-desc" data-i18n="experience.e2.desc">Worked across daily trade support, settlement coordination, automation, and process improvement for fixed income products.</p>
                     </article>
                     <article class="experience-card reveal">
                         <h3 class="experience-company">Goldman Sachs</h3>
-                        <p class="experience-role">Equities Execution Services, Analyst</p>
-                        <p class="experience-desc">Supported allocations, confirmations, account setup, and workflow improvement across client-facing operations.</p>
+                        <p class="experience-role" data-i18n="experience.e3.role">Equities Execution Services, Analyst</p>
+                        <p class="experience-desc" data-i18n="experience.e3.desc">Supported allocations, confirmations, account setup, and workflow improvement across client-facing operations.</p>
                     </article>
                     <article class="experience-card reveal">
                         <h3 class="experience-company">apprAIse-factory</h3>
-                        <p class="experience-role">Software Engineer</p>
-                        <p class="experience-desc">Built a Python-based residential property pricing model used in live real estate transactions.</p>
+                        <p class="experience-role" data-i18n="experience.e4.role">Software Engineer</p>
+                        <p class="experience-desc" data-i18n="experience.e4.desc">Built a Python-based residential property pricing model used in live real estate transactions.</p>
                     </article>
                 </div>
             </div>
@@ -350,13 +360,13 @@
         <section class="section section--dark" id="contact">
             <div class="container">
                 <div class="contact-content reveal">
-                    <h2 class="section-title">Let's Talk</h2>
-                    <p class="contact-body">If you need a website, app prototype, workflow automation, or a better way to manage a business process, feel free to get in touch.</p>
-                    <p class="contact-supporting">I am available for remote freelance projects in Hong Kong and open to discussing both short-term and ongoing work.</p>
-                    <a href="mailto:tsangkaho12@gmail.com" class="btn btn-primary btn-lg">Contact Me</a>
+                    <h2 class="section-title" data-i18n="contact.title">Let's Talk</h2>
+                    <p class="contact-body" data-i18n="contact.body">If you need a website, app prototype, workflow automation, or a better way to manage a business process, feel free to get in touch.</p>
+                    <p class="contact-supporting" data-i18n="contact.supporting">I am available for remote freelance projects in Hong Kong and open to discussing both short-term and ongoing work.</p>
+                    <a href="mailto:tsangkaho12@gmail.com" class="btn btn-primary btn-lg" data-i18n="contact.btn">Contact Me</a>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-label">Email</span>
+                            <span class="contact-label" data-i18n="contact.email_label">Email</span>
                             <a href="mailto:tsangkaho12@gmail.com">tsangkaho12@gmail.com</a>
                         </div>
                         <div class="contact-item">
@@ -364,7 +374,7 @@
                             <a href="https://www.linkedin.com/in/kaho-tsang-030a0319a" target="_blank" rel="noopener">linkedin.com/in/kaho-tsang</a>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-label">Phone</span>
+                            <span class="contact-label" data-i18n="contact.phone_label">Phone</span>
                             <a href="tel:+818074682607">+81 80-7468-2607</a>
                         </div>
                     </div>
@@ -379,7 +389,7 @@
         <div class="container footer-inner">
             <div class="footer-left">
                 <span class="footer-name">Kaho Tsang</span>
-                <span class="footer-role">Web, App &amp; Automation Consultant</span>
+                <span class="footer-role" data-i18n="footer.role">Web, App &amp; Automation Consultant</span>
             </div>
             <span class="footer-copy">&copy; 2026</span>
         </div>

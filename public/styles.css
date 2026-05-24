@@ -91,6 +91,7 @@ body.lang-zh {
 body.lang-zh .hero-headline {
     font-weight: 700;
     letter-spacing: 0.02em;
+    max-width: 900px;
 }
 
 body.lang-zh .section-title {
@@ -588,7 +589,7 @@ h1, h2, h3, h4 {
 }
 
 .section-header {
-    margin-bottom: var(--space-3xl);
+    margin-bottom: var(--space-2xl);
 }
 
 .section-intro {
@@ -686,28 +687,30 @@ h1, h2, h3, h4 {
    SELECTED WORK
    ======================================== */
 .work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
 }
 
 .work-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    transition: all var(--transition-base);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
 }
 
-.work-card:hover {
-    border-color: rgba(61, 107, 94, 0.3);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
+.work-card:nth-child(even) {
+    direction: rtl;
+}
+
+.work-card:nth-child(even) > * {
+    direction: ltr;
 }
 
 .work-visual {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+    border-radius: var(--radius-xl);
     position: relative;
     background: var(--color-bg-alt);
 }
@@ -716,10 +719,6 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-slow);
-}
-.work-card:hover .work-visual img {
-    transform: scale(1.03);
 }
 
 .work-visual--abstract {
@@ -729,34 +728,63 @@ h1, h2, h3, h4 {
     justify-content: center;
 }
 
-.work-visual--1 {
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 31px,
-            rgba(255, 255, 255, 0.035) 31px,
-            rgba(255, 255, 255, 0.035) 32px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 79px,
-            rgba(255, 255, 255, 0.02) 79px,
-            rgba(255, 255, 255, 0.02) 80px
-        );
+.work-visual--gourney {
+    background:
+        radial-gradient(circle at 20% 50%, rgba(61, 107, 94, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(180, 120, 60, 0.12) 0%, transparent 40%),
+        var(--color-dark);
 }
 
-.work-visual--2 {
-    background-image:
-        linear-gradient(135deg, rgba(61, 107, 94, 0.12) 0%, transparent 50%),
-        linear-gradient(
-            rgba(255, 255, 255, 0.025) 1px, transparent 1px
-        ),
-        linear-gradient(
-            90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px
-        );
-    background-size: 100% 100%, 40px 40px, 40px 40px;
+.work-visual--photo {
+    background: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+.work-visual--photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(10, 14, 18, 0.55) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.work-visual img.work-visual-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(36px) saturate(1.15) brightness(0.55);
+    transform: scale(1.2);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.work-visual img.work-visual-fg {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    height: auto;
+    max-width: 62%;
+    max-height: 76%;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 20px 50px -12px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.work-visual img.work-visual-fg--icon {
+    max-width: 38%;
+    max-height: 58%;
+    border-radius: 22%;
+    box-shadow:
+        0 24px 60px -10px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .work-visual-inner {
@@ -772,7 +800,7 @@ h1, h2, h3, h4 {
 }
 
 .work-info {
-    padding: var(--space-lg) var(--space-xl) var(--space-xl);
+    padding: var(--space-sm) 0;
 }
 
 .work-category {
@@ -787,7 +815,7 @@ h1, h2, h3, h4 {
 
 .work-title {
     font-family: var(--font-body);
-    font-size: 1.1875rem;
+    font-size: 1.375rem;
     font-weight: 600;
     color: var(--color-text);
     line-height: 1.35;
@@ -937,43 +965,60 @@ h1, h2, h3, h4 {
    ======================================== */
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-3xl);
+    row-gap: var(--space-2xl);
 }
 
 .experience-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    padding: var(--space-xl);
-    transition: all var(--transition-base);
+    padding-left: var(--space-lg);
+    border-left: 2px solid var(--color-border);
+    transition: border-color var(--transition-base);
 }
 
 .experience-card:hover {
-    border-color: var(--color-accent);
-    box-shadow: var(--shadow-sm);
+    border-left-color: var(--color-accent);
+}
+
+.experience-role {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1.4;
 }
 
 .experience-company {
     font-family: var(--font-body);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: var(--space-xs);
     line-height: 1.3;
+    margin-top: 0.25rem;
 }
 
-.experience-role {
+.experience-time {
     font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--color-accent);
-    margin-bottom: var(--space-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+.experience-location {
+    font-size: 0.8125rem;
+    color: var(--color-text-tertiary);
     line-height: 1.4;
 }
 
+.experience-divider {
+    border: none;
+    border-top: 1px solid var(--color-border-light);
+    margin: var(--space-xs) 0;
+    align-self: center;
+}
+
 .experience-desc {
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: 0.9375rem;
+    line-height: 1.65;
     color: var(--color-text-secondary);
 }
 
@@ -1108,7 +1153,6 @@ h1, h2, h3, h4 {
 .work-grid .reveal:nth-child(1) { transition-delay: 0s; }
 .work-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
 .work-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
-.work-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
 
 .experience-grid .reveal:nth-child(1) { transition-delay: 0s; }
 .experience-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
@@ -1146,6 +1190,10 @@ h1, h2, h3, h4 {
         font-size: 2.25rem;
     }
 
+    .work-card {
+        gap: var(--space-xl);
+    }
+
     .capabilities-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1156,6 +1204,7 @@ h1, h2, h3, h4 {
 
     .experience-grid {
         grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--space-2xl);
     }
 
     .contact-details {
@@ -1231,15 +1280,23 @@ h1, h2, h3, h4 {
     }
 
     .section-header {
-        margin-bottom: var(--space-2xl);
+        margin-bottom: var(--space-xl);
     }
 
     .services-grid {
         grid-template-columns: 1fr;
     }
 
-    .work-grid {
+    .work-card {
         grid-template-columns: 1fr;
+    }
+
+    .work-card:nth-child(even) {
+        direction: ltr;
+    }
+
+    .work-visual {
+        aspect-ratio: 16 / 10;
     }
 
     .capabilities-grid {
@@ -1299,7 +1356,6 @@ h1, h2, h3, h4 {
 
     .service-card,
     .work-info,
-    .experience-card,
     .capability-group {
         padding: var(--space-md);
     }
@@ -1340,9 +1396,6 @@ h1, h2, h3, h4 {
         animation: none;
     }
 
-    .work-card:hover .work-visual img {
-        transform: none;
-    }
 }
 
 

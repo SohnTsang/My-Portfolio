@@ -1131,6 +1131,196 @@ h1, h2, h3, h4 {
 
 
 /* ========================================
+   HERO PROOF TAGS
+   ======================================== */
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: var(--space-xl);
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: 8px 14px;
+    color: var(--color-accent);
+    background: var(--color-accent-light);
+    border: 1px solid rgba(61, 107, 94, 0.18);
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   SECTION EYEBROW
+   ======================================== */
+.section-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+}
+
+
+/* ========================================
+   SERVICE CARD — extras
+   ======================================== */
+.service-benefit {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--color-text);
+    font-weight: 500;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.service-examples {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-sm);
+}
+
+.service-examples-label {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-right: 8px;
+}
+
+
+/* ========================================
+   VALIDATION SECTION
+   ======================================== */
+.validation-body {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    max-width: 760px;
+    margin-bottom: var(--space-2xl);
+}
+
+.validation-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.validation-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.validation-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.validation-step {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+}
+
+.validation-title {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    line-height: 1.35;
+}
+
+.validation-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.validation-note {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-text-tertiary);
+    max-width: 760px;
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-light);
+}
+
+
+/* ========================================
+   WORK CARD — markets visual
+   ======================================== */
+.work-visual--markets {
+    background:
+        radial-gradient(circle at 25% 30%, rgba(61, 107, 94, 0.22) 0%, transparent 55%),
+        radial-gradient(circle at 80% 75%, rgba(180, 120, 60, 0.10) 0%, transparent 50%),
+        var(--color-dark);
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.work-markets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md) var(--space-lg);
+    padding: 0 var(--space-md);
+}
+
+.work-market {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.work-market-code {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.02em;
+}
+
+.work-market-name {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.work-markets-caption {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ========================================
    SCROLL ANIMATIONS
    ======================================== */
 .reveal {
@@ -1195,6 +1385,10 @@ h1, h2, h3, h4 {
     }
 
     .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .validation-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1301,6 +1495,14 @@ h1, h2, h3, h4 {
 
     .capabilities-grid {
         grid-template-columns: 1fr;
+    }
+
+    .validation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-market-code {
+        font-size: 2rem;
     }
 
     .why-content {
